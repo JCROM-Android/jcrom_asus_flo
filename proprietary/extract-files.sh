@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "Download and Deodexing... Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/razor-jss15j-factory-2e08b83b.tgz
-tar zxf razor-jss15j-factory-2e08b83b.tgz
-cd razor-jss15j
-unzip image-razor-jss15j.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/razor-jss15q-factory-4f77b811.tgz
+tar zxf razor-jss15q-factory-4f77b811.tgz
+cd razor-jss15q
+unzip image-razor-jss15q.zip
 cd ../
-./simg2img razor-jss15j/system.img system.ext4.img
+./simg2img razor-jss15q/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -61,6 +61,6 @@ cp -a tmp/vendor/etc/audio_effects.conf system/vendor/etc/audio_effects.conf
 
 sudo umount tmp
 rm -rf tmp
-rm -rf razor-jss15j
+rm -rf razor-jss15q
 rm system.ext4.img
 
