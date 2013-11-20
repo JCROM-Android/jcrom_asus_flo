@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "Download and Deodexing... Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/razor-krt16o-factory-d9e7d441.tgz
-tar zxf razor-krt16o-factory-d9e7d441.tgz
-cd razor-krt16o
-unzip image-razor-krt16o.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/razor-krt16s-factory-7235eb0d.tgz
+tar zxf razor-krt16s-factory-7235eb0d.tgz
+cd razor-krt16s
+unzip image-razor-krt16s.zip
 cd ../
-./simg2img razor-krt16o/system.img system.ext4.img
+./simg2img razor-krt16s/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -39,6 +39,6 @@ cp -a tmp/media/bootanimation.zip system/media/bootanimation.zip
 
 sudo umount tmp
 rm -rf tmp
-rm -rf razor-krt16o
+rm -rf razor-krt16s
 rm system.ext4.img
 
