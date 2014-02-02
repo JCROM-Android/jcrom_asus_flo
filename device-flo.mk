@@ -1,9 +1,5 @@
 LOCAL_PATH := jcrom/asus/flo
 
-PRODUCT_PACKAGES += \
-    Browser \
-    Gallery2
-
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.voice.capable=false
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.sms.capable=false
 
