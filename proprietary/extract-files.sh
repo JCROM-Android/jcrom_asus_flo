@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "Download and Deodexing... Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/razor-kot49h-factory-ebb4918e.tgz
-tar zxf razor-kot49h-factory-ebb4918e.tgz
-cd razor-kot49h
-unzip image-razor-kot49h.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/razor-ktu84l-factory-afe3afc8.tgz
+tar zxf razor-ktu84l-factory-afe3afc8.tgz
+cd razor-ktu84l
+unzip image-razor-ktu84l.zip
 cd ../
-./simg2img razor-kot49h/system.img system.ext4.img
+./simg2img razor-ktu84l/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -35,10 +35,15 @@ cp -a tmp/etc/fmas_eq.dat system/etc/fmas_eq.dat
 cp -a tmp/lib/libDxHdcp.so system/lib/libDxHdcp.so
 cp -a tmp/lib/soundfx/libfmas.so system/lib/soundfx/libfmas.so
 cp -a tmp/lib/hw/keystore.msm8960.so system/lib/hw/keystore.msm8960.so
+cp -a tmp/lib/libgcastv2_base.so system/lib/libgcastv2_base.so
+cp -a tmp/lib/libgcastv2_support.so system/lib/libgcastv2_support.so
+cp -a tmp/lib/libjgcastservice.so system/lib/libjgcastservice.so
+cp -a tmp/lib/libjhead.so system/lib/libjhead.so
+cp -a tmp/lib/libjhead_jni.so system/lib/libjhead_jni.so
 cp -a tmp/media/bootanimation.zip system/media/bootanimation.zip
 
 sudo umount tmp
 rm -rf tmp
-rm -rf razor-kot49h
+rm -rf razor-ktu84l
 rm system.ext4.img
 
