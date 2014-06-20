@@ -1,11 +1,11 @@
 #!/bin/bash
-echo "Download and Deodexing... Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/razor-ktu84l-factory-afe3afc8.tgz
-tar zxf razor-ktu84l-factory-afe3afc8.tgz
-cd razor-ktu84l
-unzip image-razor-ktu84l.zip
+echo "Please wait."
+wget -nc -q https://dl.google.com/dl/android/aosp/razor-ktu84p-factory-b1b2c0da.tgz
+tar zxf razor-ktu84p-factory-b1b2c0da.tgz
+cd razor-ktu84p
+unzip image-razor-ktu84p.zip
 cd ../
-./simg2img razor-ktu84l/system.img system.ext4.img
+./simg2img razor-ktu84p/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -44,6 +44,5 @@ cp -a tmp/media/bootanimation.zip system/media/bootanimation.zip
 
 sudo umount tmp
 rm -rf tmp
-rm -rf razor-ktu84l
+rm -rf razor-ktu84p
 rm system.ext4.img
-
