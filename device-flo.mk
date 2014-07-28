@@ -5,7 +5,8 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.sms.capable=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.ui.phone=600 \
-    persist.sys.ui.tablet=320
+    persist.sys.ui.tablet=320 \
+    persist.sys.ui.phablet=286
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
