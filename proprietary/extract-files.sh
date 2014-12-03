@@ -1,12 +1,12 @@
 #!/bin/bash
 echo "Please wait..."
-wget -nc -q https://dl.google.com/dl/android/aosp/razor-lrx21p-factory-ba55c6ab.tgz
-tar zxf razor-lrx21p-factory-ba55c6ab.tgz
-rm razor-lrx21p-factory-ba55c6ab.tgz
-cd razor-lrx21p
-unzip image-razor-lrx21p.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/razor-lrx22c-factory-a9c6e55f.tgz
+tar zxf razor-lrx22c-factory-a9c6e55f.tgz
+rm razor-lrx22c-factory-a9c6e55f.tgz
+cd razor-lrx22c
+unzip image-razor-lrx22c.zip
 cd ../
-./simg2img razor-lrx21p/system.img system.ext4.img
+./simg2img razor-lrx22c/system.img system.ext4.img
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
 sync
@@ -55,5 +55,5 @@ cp -a tmp/media/audio/ui/audio_initiate.ogg system/media/audio/ui/audio_initiate
 
 sudo umount tmp
 rm -rf tmp
-rm -rf razor-lrx21p
+rm -rf razor-lrx22c
 rm system.ext4.img
