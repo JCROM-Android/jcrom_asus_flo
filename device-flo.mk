@@ -8,6 +8,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.ui.tablet=320 \
     persist.sys.ui.phablet=286
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.ui.select=1
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/etc/preferred-apps/google.xml:system/etc/preferred-apps/google.xml:asus \
 	$(LOCAL_PATH)/proprietary/system/etc/sysconfig/google.xml:system/etc/sysconfig/google.xml:asus \
